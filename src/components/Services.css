@@ -1,0 +1,174 @@
+/* Services.css */
+
+.page-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    /* Ajusta a margem para telas maiores */
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* Centraliza o título e a intro */
+}
+
+.services-title {
+    font-size: 2.8rem;
+    color: #222222;
+    /* Preto */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.services-intro {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-grid {
+    display: flex;
+    /* ALTERADO: de 'grid' para 'flex' */
+    gap: 30px;
+    /* Espaçamento entre os cards */
+    justify-content: center;
+    /* Centraliza o grid */
+    padding: 0 20px;
+    /* Padding interno */
+}
+
+.service-card {
+    background-color: #f0f0f0;
+    /* Fundo cinza claro para o card */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    /* Sombra mais pronunciada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    /* Garante que todos os cards tenham a mesma altura */
+
+    /* NOVAS PROPRIEDADES FLEXBOX para controlar a largura do card */
+    flex: 0 0 300px;
+    /* Define largura base em 300px, não cresce, não encolhe (a princípio) */
+    max-width: calc(50% - 15px);
+    /* Para 2 colunas em telas maiores que 600px aprox. e um gap. */
+    /* O 15px é metade do gap, para que dois cards e um gap caibam em 100% da largura. */
+    /* Vamos ajustar isso na media query principal também. */
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    /* Eleva o card no hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* AUMENTAR TAMANHO DO CONTAINER DO ÍCONE MAIS UM POUCO */
+  width: 140px; /* Aumentado para dar mais espaço */
+  height: 140px; /* Aumentado para dar mais espaço */
+
+  background-color: var(--primary-green); /* Fundo verde */
+  border-radius: 50%; /* Torna o contêiner circular */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra mais intensa para mais profundidade */
+  overflow: hidden; /* Garante que a imagem não vaze do círculo */
+}
+
+
+.service-image-icon {
+  /* AUMENTAR TAMANHO DA IMAGEM DENTRO DO ÍCONE para preencher QUASE TUDO */
+  width: 100px; /* A imagem bem maior agora, quase preenchendo o círculo */
+  height: 100px; /* Mantém a proporção */
+
+  object-fit: cover; /* Continua cobrindo o espaço, cortando se necessário */
+
+  /* Adiciona um brilho sutil e aumenta o contraste */
+  filter: brightness(1.3) contrast(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+  /* Este filtro aumenta o brilho, contraste e adiciona um brilho externo claro */
+
+  /* Se seus ícones forem escuros e você quer que fiquem BRANCOS sobre o verde, use ESTE abaixo e comente o filter acima: */
+  /* filter: invert(100%) brightness(1.8); */
+}
+
+
+.service-card h3 {
+    font-size: 1.8rem;
+    color: #333333;
+    /* Texto do título */
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #666;
+    /* Texto da descrição */
+    line-height: 1.5;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .page-container {
+        padding: 20px;
+        margin: 10px auto;
+    }
+
+    .services-title {
+        font-size: 2.2rem;
+    }
+
+    .services-intro {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        /* Uma coluna em telas menores */
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 25px;
+    }
+
+    .service-icon {
+    margin-bottom: 15px;
+    width: 100px; /* Ajuste para mobile */
+    height: 100px; /* Ajuste para mobile */
+  }
+
+     .service-image-icon {
+    width: 70px; /* Ajuste da imagem para mobile */
+    height: 70px;
+  }
+
+}
+
+/* Adicione uma media query para controlar o layout de 2 colunas para 3 cards */
+@media (min-width: 650px) and (max-width: 950px) {
+    .service-card {
+        flex: 0 0 calc(50% - 15px);
+        /* Dois cards por linha com gap */
+    }
+}
+
+/* Para telas muito largas, se desejar 3 cards por linha */
+@media (min-width: 951px) {
+    .service-card {
+        flex: 0 0 calc(33.333% - 20px);
+        /* Aproximadamente 3 cards por linha com gap */
+        /* 20px é (2/3) * gap, para 3 itens */
+    }
+}

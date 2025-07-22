@@ -1,0 +1,135 @@
+/* Navbar.css - Cores: Verde, Dourado, Preto, Branco */
+
+/* Cores personalizadas (opcional, mas bom para referência):
+ --color-green: #10B981;  (Um verde vibrante)
+ --color-gold: #FFD700;   (Dourado)
+ --color-black: #222222;  (Preto mais suave, para não ser 100% preto)
+ --color-white: #FFFFFF;  (Branco puro)
+ --color-light-gray: #f8f8f8; (Um cinza quase branco, para detalhes)
+*/
+
+.navbar {
+  background-color: white; /* Preto */
+  color: #FFFFFF; /* Branco */
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra mais escura */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  
+}
+
+.navbar-logo {
+  height: 100px; /* Ajuste a altura do seu logo conforme necessário */
+  width: auto; /* Mantém a proporção da imagem */
+  margin-right: 15px; /* Espaço entre o logo e o texto, se houver */
+  /* filter: brightness(0) invert(1); /* Opcional: Se seu logo for colorido e você quiser que ele seja branco para o tema escuro */
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  color: #10B981; /* Verde */
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #FFD700; /* Dourado no hover */
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-item {
+  color: #39FF14;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 4px #39FF14;
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.nav-item:hover {
+  background-color: #39FF14;
+  color: #fff700;
+  text-shadow: none;
+  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;
+  border-color: #39FF14;
+}
+
+
+
+.nav-item.active {
+  background-color: #39FF14;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 15px #39FF14;
+}
+
+/* Estilos para o botão de menu mobile */
+.menu-icon {
+  display: none;
+  background: none;
+  border: none;
+  color: #10B981; /* Verde para o ícone no mobile */
+  cursor: pointer;
+}
+
+.menu-icon svg {
+  width: 30px;
+  height: 30px;
+  stroke: #10B981; /* Garante que o SVG também seja verde */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: #222222; /* Preto para o fundo do menu mobile */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 1rem 20px;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #333333; /* Linha divisória mais escura */
+  }
+
+  .nav-item:last-child {
+    border-bottom: none;
+  }
+}

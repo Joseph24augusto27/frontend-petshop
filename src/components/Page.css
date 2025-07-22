@@ -1,0 +1,73 @@
+/* Estilos genéricos para os containers das páginas */
+.page-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 40px; /* Mais padding */
+  background-color: var(--light-color); /* Fundo branco */
+  border-radius: 10px; /* Borda mais arredondada */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+.page-container h2 {
+  color: var(--primary-green); /* Título em verde */
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 2.5em; /* Título maior */
+  font-weight: bold;
+}
+
+.page-container p {
+  margin-bottom: 18px;
+  font-size: 1.15em; /* Fonte um pouco maior */
+  text-align: justify; /* Justifica o texto para melhor leitura */
+}
+
+.page-container ul {
+  list-style: disc;
+  margin-left: 30px; /* Recuo maior da lista */
+  padding: 0;
+}
+
+.page-container li {
+  margin-bottom: 12px;
+  font-size: 1.05em;
+}
+
+/* Estilos para o formulário de contato dentro da página Contact.jsx */
+.page-container form {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--light-gray); /* Separador sutil */
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+  .page-container {
+    margin: 25px 15px;
+    padding: 25px;
+  }
+  .page-container h2 {
+    font-size: 2em;
+  }
+  .page-container p {
+    font-size: 1.05em;
+  }
+}
+
+@media (max-width: 500px) {
+  .page-container {
+    margin: 15px 10px;
+    padding: 20px;
+  }
+  .page-container h2 {
+    font-size: 1.7em;
+  }
+  .page-container p {
+    font-size: 1em;
+  }
+  .page-container ul {
+    margin-left: 20px;
+  }
+}

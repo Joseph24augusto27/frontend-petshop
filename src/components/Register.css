@@ -1,0 +1,67 @@
+/* Estilos para o container principal do formulário de login/cadastro */
+.login-container,
+.register-container {
+  max-width: 450px; /* Um pouco mais largo para melhor design */
+  margin: 50px auto;
+  padding: 30px; /* Mais padding */
+  border: none; /* Remove a borda padrão */
+  border-radius: 10px; /* Borda mais arredondada */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra mais suave e moderna */
+  background-color: var(--light-color); /* Fundo branco */
+  text-align: center;
+}
+
+.login-container h2,
+.register-container h2 {
+  color: var(--primary-green); /* Título em verde */
+  margin-bottom: 25px;
+  font-size: 2em;
+}
+
+.form-group label {
+  color: var(--text-color); /* Cor padrão do texto */
+  margin-bottom: 8px; /* Mais espaço entre label e input */
+}
+
+.form-group input {
+    /* Já definimos estilos globais para input no App.css, então não precisamos repetir muito aqui */
+    margin-bottom: 15px; /* Espaço entre inputs */
+}
+
+/* Mensagens de feedback */
+.message {
+  margin-top: 25px;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.95em;
+}
+
+.message.success {
+  background-color: #e6ffe6; /* Verde muito claro */
+  color: #1a7a24; /* Verde mais escuro */
+  border: 1px solid #a3e6a3;
+}
+
+.message.error {
+  background-color: #ffe6e6; /* Vermelho muito claro */
+  color: #b32d2d; /* Vermelho mais escuro */
+  border: 1px solid #e6a3a3;
+}
+
+
+/* Media query para telas menores */
+@media (max-width: 500px) {
+  .login-container,
+  .register-container {
+    margin: 20px 15px; /* Margem ajustada para mobile */
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .login-container h2,
+  .register-container h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+}

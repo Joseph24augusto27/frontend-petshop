@@ -1,0 +1,286 @@
+/* Variáveis CSS para as cores do Pet Shop */
+html {
+  scroll-behavior: smooth; /* Adiciona rolagem suave para âncoras */
+}
+
+
+:root {
+  --primary-green: #4CAF50; /* Um verde bonito */
+  --secondary-gold: #FFD700; /* Dourado */
+  --dark-color: #222222; /* Preto mais suave para texto/fundos */
+  --light-color: #FFFFFF; /* Branco puro */
+  --light-gray: #f4f4f4; /* Cinza claro para fundos */
+  --text-color: #333333; /* Cor padrão do texto */
+}
+
+/* Reset básico para todos os elementos */
+* {
+  box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* Transições suaves para propriedades comuns, para um toque moderno */
+  transition: background-color 1.0s ease, color 1.6s ease, border-color 1.6s ease, transform 1.6s ease;
+}
+
+body {
+  font-family: 'Arial', sans-serif; /* Fonte mais comum */
+  line-height: 1.6;
+  background-color: var(--light-color); /* Fundo geral do site */
+  color: var(--text-color); /* Cor padrão do texto */
+  overflow-x: hidden; /* Evita scroll horizontal indesejado */
+}
+
+/* Estilo para o container principal da aplicação */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o App ocupe toda a altura da tela */
+   width: 100%; /* Garante que o App ocupe 100% da largura */
+  overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+
+/* Estilo para o conteúdo principal */
+main {
+  flex-grow: 1; /* Garante que o conteúdo principal ocupe o espaço restante */ 
+    width: 100%; /* Garante que o main ocupe 100% da largura do App */
+  /* Pode adicionar um display flex e align-items/justify-content center aqui
+     se quiser que o conteúdo dentro do main (como sua página Home)
+     seja sempre centralizado horizontalmente */
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: flex-start; /* Alinha o conteúdo ao topo verticalmente */
+}
+
+
+/* Estilo para o rodapé */
+footer {
+  background-color: var(--secondary-gold); /* Fundo preto/escuro */
+  color: var(--light-color); /* Texto branco */
+  text-align: center;
+  padding: 15px;
+  margin-top: auto; /* Empurra o rodapé para baixo */
+}
+
+/* Estilo genérico para botões (usaremos essa classe em todos os botões) */
+button {
+  background-color: var(--primary-green);
+  color: var(--light-color);
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--secondary-gold); /* Dourado no hover */
+  transform: translateY(-2px); /* Pequena elevação */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(0); /* Retorna ao normal ao clicar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para inputs de formulário */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 1em;
+  color: var(--text-color);
+  background-color: var(--light-color);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: var(--primary-green); /* Borda verde no foco */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3); /* Sombra verde suave no foco */
+}
+
+/* App.css - Novos estilos para a Home Page */
+
+.home-container {
+  width: 100%;
+  /* Por enquanto, vamos deixar o problema do padding-top de lado como você pediu.
+     Se o conteúdo ainda estiver subindo, lembre-se que precisaremos ajustar o padding-top da main. */
+}
+
+.hero-section {
+  color: white;
+  text-align: center;
+  padding: 150px 20px; /* Mais padding para um visual de "banner" */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px; /* Altura mínima para o hero */
+  position: relative; /* Para posicionar elementos internos se necessário */
+  position: relative; /* Para que a imagem de fundo fique atrás do conteúdo */
+  overflow: hidden; /* Para evitar que a imagem ultrapasse os limites */
+  
+}
+.hero-image{
+  position: absolute; /* Para posicionar a imagem */
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem cobrir toda a seção */
+  z-index: 0; /* Para que fique atrás do conteúdo */
+}
+
+.hero-content {
+  max-width: 800px;
+  z-index: 1; /* Garante que o conteúdo fique acima da camada de opacidade */
+    position: relative; /* Para que o conteúdo fique acima da imagem */
+  z-index: 1; /* Garante que o conteúdo fique visível */
+}
+
+@keyframes ledGlow {
+  0%, 100% {
+    color: #FFD700;
+    text-shadow:
+      0 0 5px #FFD700,
+      0 0 10px #FFD700,
+      0 0 20px #FFD700,
+      0 0 30px rgba(255, 215, 0, 0.6),
+      0 0 40px rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    color: #bfa600; /* tom mais escuro durante o "piscado" */
+    text-shadow:
+      0 0 2px #bfa600,
+      0 0 5px #bfa600,
+      0 0 10px rgba(191, 166, 0, 0.4),
+      0 0 15px rgba(191, 166, 0, 0.2);
+  }
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: #FFD700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: ledGlow 3s ease-in-out infinite;
+}
+
+
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Para botões em várias linhas em telas pequenas */
+}
+
+.hero-button {
+  background-color: transparent;
+  color: #39FF14;
+  border: 2px solid #39FF14;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 4px #39FF14;
+  box-shadow: 0 0 5px #39FF14 inset;
+  letter-spacing: 1px;
+  backdrop-filter: blur(6px);
+}
+
+.hero-button.primary {
+  background-color: #10B981; /* Verde */
+  color: white;
+  border: 2px solid #10B981;
+}
+
+.hero-button.primary:hover {
+  background-color: #0d9d6e; /* Verde mais escuro */
+  transform: translateY(-3px);
+}
+
+.hero-button.secondary {
+  background-color: transparent;
+  color: #FFD700; /* Dourado */
+  border: 2px solid #FFD700;
+}
+
+.hero-button.secondary:hover {
+  background-color: #39FF14;
+  color: #000;
+  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 30px #39FF14;
+  text-shadow: none;
+  transform: scale(1.05);
+}
+
+/* Seção de informações (exemplo) */
+.info-section {
+  padding: 60px 20px;
+  text-align: center;
+  color: #333;
+}
+
+.info-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #222222; /* Preto */
+}
+
+.info-section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Responsividade para a Hero Section */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 100px 15px; /* Reduz padding em telas menores */
+    min-height: 400px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem; /* Fonte menor */
+  }
+
+  .hero-content p {
+    font-size: 1rem; /* Fonte menor */
+  }
+
+  .hero-buttons {
+    flex-direction: column; /* Botões empilhados */
+    gap: 15px;
+  }
+
+  .hero-button {
+    width: 80%; /* Botões mais largos */
+    margin: 0 auto;
+  }
+
+  .info-section {
+    padding: 40px 15px;
+  }
+
+  .info-section h2 {
+    font-size: 2rem;
+  }
+}
