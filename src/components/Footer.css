@@ -1,17 +1,24 @@
-/* frontend-petshop/src/components/Footer.css */
-
-.footer-container {
-  background-color: var(--secondary-gold); /* Usamos o dourado brilhante do seu tema */
-  color: var(--dark-color); /* Texto escuro para melhor contraste no dourado */
+.footer {
+  background: var(--primary-color);
+  color: white;
   text-align: center;
   padding: 20px;
-  /* Garante que o rodapé fique sempre na parte inferior da tela,
-     empurrando o conteúdo para cima se ele for menor que a altura da tela */
-  margin-top: auto;
-  width: 100%; /* Garante que ocupe toda a largura */
+  margin-top: 40px;
 }
 
-.footer-container p {
-  font-size: 0.9em;
-  margin: 0; /* Remove margens padrão do parágrafo */
+.footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.footer .social-icons a {
+  color: white;
+  font-size: 20px;
+  transition: var(--transition);
+}
+
+.footer .social-icons a:hover {
+  color: var(--secondary-color);
 }
