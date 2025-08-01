@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'; // Importe useEffect
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import AOS from 'aos'; // Importe AOS
 import 'aos/dist/aos.css'; // Importe o CSS do AOS
-
 import Navbar from './components/Navbar';
 import Register from './components/Register';
 import Login from './components/Login';

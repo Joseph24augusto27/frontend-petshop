@@ -25,7 +25,7 @@
 .navbar-logo {
   height: 100px; /* Ajuste a altura do seu logo conforme necessário */
   width: auto; /* Mantém a proporção da imagem */
-  margin-right: 15px; /* Espaço entre o logo e o texto, se houver */
+  margin-right: 50px; /* Espaço entre o logo e o texto, se houver */
   /* filter: brightness(0) invert(1); /* Opcional: Se seu logo for colorido e você quiser que ele seja branco para o tema escuro */
 }
 
@@ -56,33 +56,53 @@
 }
 
 .nav-item {
-  color: #39FF14;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  text-shadow: 0 0 4px #39FF14;
-  border: 1px solid transparent;
   position: relative;
+  color: #2ecc71;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 4px rgba(46, 204, 113, 0.6);
+  border: none;
+  outline: none;
+}
+
+/* Linha animada de destaque */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #39FF14, #f1c40f);
+  transition: width 0.3s ease, left 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
 }
 
 .nav-item:hover {
-  background-color: #39FF14;
-  color: #fff700;
-  text-shadow: none;
-  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;
-  border-color: #39FF14;
+  color: #39FF14;
+  text-shadow: 0 0 8px rgba(57, 255, 20, 0.8);
+  transform: translateY(-2px);
 }
 
+.nav-item:hover::after {
+  width: 100%;
+  left: 50%;
+}
 
-
+/* Estado ativo */
 .nav-item.active {
-  background-color: #39FF14;
   color: #000;
   font-weight: bold;
-  box-shadow: 0 0 15px #39FF14;
+  background: #39FF14;
+  box-shadow: 0 0 12px rgba(57, 255, 20, 0.6);
+  border-radius: 8px;
+  text-shadow: none;
+  padding: 10px 18px;
 }
 
 /* Estilos para o botão de menu mobile */

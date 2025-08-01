@@ -17,8 +17,7 @@ function Navbar() {
     { path: '/services', name: 'Serviços' },
     { path: '/products', name: 'Produtos' },
     { path: '/contact', name: 'Contato' },
-    { path: '/register', name: 'Cadastro' },
-    { path: '/login', name: 'Login' },
+    
   ];
 
   return (
