@@ -57,9 +57,9 @@
 
 .nav-item {
   position: relative;
-  color: #2ecc71;
+  color: #2ec155;
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
   padding: 10px 16px;
   border-radius: 8px;
@@ -74,24 +74,23 @@
   content: "";
   position: absolute;
   bottom: -4px;
-  left: 50%;
+  left: 40%;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #39FF14, #f1c40f);
-  transition: width 0.3s ease, left 0.3s ease;
+  background: linear-gradient(90deg, #39FF14, #4dd006);
+  transition: width 0.5s ease, left 0.5s ease;
   transform: translateX(-50%);
   border-radius: 2px;
 }
 
 .nav-item:hover {
-  color: #39FF14;
-  text-shadow: 0 0 8px rgba(57, 255, 20, 0.8);
+  color: #2cf105;
+  text-shadow: 0 0 8px rgba(53, 240, 6, 0.8);
   transform: translateY(-2px);
 }
 
 .nav-item:hover::after {
-  width: 100%;
-  left: 50%;
+  width: 70%;
 }
 
 /* Estado ativo */
@@ -152,5 +151,51 @@
 
   .nav-item:last-child {
     border-bottom: none;
+  }
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 1.4rem; /* Aumentado para dar mais presença */
+  color: #39FF14;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-item .nav-icon {
+  color: #39FF14; /* Verde puro, sem borda */
+  font-size: 1.5rem; /* Ícones um pouco maiores para equilibrar com o texto */
+  transition: all 0.4s ease;
+  animation: led-pulse 2s infinite ease-in-out;
+  filter: drop-shadow(0 0 2px #39FF14); /* brilho mais sutil */
+}
+
+.nav-item:hover,
+.nav-item:hover .nav-icon {
+  color: #fff700;
+  filter: drop-shadow(0 0 4px #fff700); /* brilho suave no hover */
+}
+
+.active-link {
+  color: #fff700;
+}
+
+.active-link .nav-icon {
+  color: #fff700;
+  filter: drop-shadow(0 0 4px #fff700);
+}
+
+/* LED pulsante moderno */
+@keyframes led-pulse {
+  0%, 100% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 2px #39FF14); /* brilho reduzido */
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px #39FF14); /* leve aumento no pulso */
   }
 }

@@ -1,63 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom'; // Importe useLocation
-import './Navbar.css'; // Certifique-se de que este CSS ainda existe e contém estilos básicos de Navbar.
+import React, { useState } from 'react';
+import { faHome, faHandshake, faBox, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link, useLocation } from 'react-router-dom';
+import './Navbar.css';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation(); // Hook para pegar a rota atual
+  const location = useLocation();
 
-  // Função para fechar o menu mobile ao clicar em um link
   const closeMenu = () => {
     setIsOpen(false);
   };
 
-  // Links de navegação com suas rotas e nomes
   const navLinks = [
-    { path: '/', name: 'Home' },
-    { path: '/services', name: 'Serviços' },
-    { path: '/products', name: 'Produtos' },
-    { path: '/contact', name: 'Contato' },
-  
+    { path: '/', name: 'Home', icon: faHome },
+    { path: '/services', name: 'Serviços', icon: faHandshake },
+    { path: '/products', name: 'Produtos', icon: faBox },
+    { path: '/contact', name: 'Contato', icon: faEnvelope },
   ];
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-          {/* SUBSTITUA O TEXTO "Pet Shop" POR ESTE CÓDIGO DA IMAGEM */}
-          <img src="/images/Imagem do WhatsApp de 2025-07-16 à(s) 18.24.09_c7a75d00.jpg" alt="Logo Pet Shop" className="navbar-logo" />
-          {/* Se o seu logo tiver texto, você pode colocar um <span> aqui para o texto ao lado do logo se desejar */}
+        {/* Logo */}
+        <img
+          src="/images/Imagem do WhatsApp de 2025-07-16 à(s) 18.24.09_c7a75d00.jpg"
+          alt="Logo Pet Shop"
+          className="navbar-logo"
+        />
 
-        {/* Botão para o menu mobile */}
+        {/* Botão menu mobile */}
         <button className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (
-            // Ícone de fechar (X)
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
           ) : (
-            // Ícone de hambúrguer
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="3" y1="12" x2="21" y2="12" />
               <line x1="3" y1="6" x2="21" y2="6" />
               <line x1="3" y1="18" x2="21" y2="18" />
@@ -65,7 +45,7 @@ function Navbar() {
           )}
         </button>
 
-        {/* Links da navegação (desktop e mobile) */}
+        {/* Links */}
         <div className={`nav-links ${isOpen ? 'active' : ''}`}>
           {navLinks.map((link) => (
             <Link
@@ -74,6 +54,7 @@ function Navbar() {
               className={`nav-item ${location.pathname === link.path ? 'active-link' : ''}`}
               onClick={closeMenu}
             >
+              <FontAwesomeIcon icon={link.icon} className="nav-icon" />
               {link.name}
             </Link>
           ))}
