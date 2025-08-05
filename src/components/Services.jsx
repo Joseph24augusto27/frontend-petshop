@@ -1,60 +1,65 @@
 import React from 'react';
-import './Services.css'; // Importa o CSS para estilizar os cards
+import './Services.css';
+import { FaBath, FaStethoscope, FaShoppingCart } from 'react-icons/fa';
 
 function Services() {
-  // Array de objetos para armazenar os detalhes de cada serviço
-  // Ajuste os 'imageSrc' para os nomes exatos dos seus arquivos de imagem na pasta 'public/images/'
   const serviceList = [
     {
       id: 1,
-      imageSrc: '/images/B&C-interior.webp', // Exemplo: verifique o nome do seu arquivo
+      icon: <FaBath />,
+      imageSrc: '/images/B&C-interior.webp',
       title: 'Banho e Tosa',
-      description: 'Cuidado completo para a higiene e beleza do seu pet, com produtos de alta qualidade e profissionais experientes.',
+      description: 'Transforme o visual do seu pet com nosso serviço de banho e tosa, utilizando produtos premium e cuidado especial.',
       aosDelay: '100',
     },
     {
       id: 2,
-      imageSrc: '/images/B&C-Frente-Dia.webp', // Exemplo: verifique o nome do seu arquivo
+      icon: <FaStethoscope />,
+      imageSrc: '/images/B&C-Frente-Dia.webp',
       title: 'Consultas Veterinárias',
-      description: 'Atendimento clínico com veterinários qualificados para garantir a saúde e o bem-estar do seu animal, incluindo vacinação e exames.',
+      description: 'Profissionais qualificados prontos para cuidar da saúde do seu pet com carinho, exames e vacinas.',
       aosDelay: '200',
     },
-
     {
-      id: 4,
-      imageSrc: '/images/B&C-interior.webp', // Exemplo: verifique o nome do seu arquivo
+      id: 3,
+      icon: <FaShoppingCart />,
+      imageSrc: '/images/B&C-interior.webp',
       title: 'Pet Shop Completo',
-      description: 'Variedade de rações, petiscos, brinquedos, acessórios e produtos de higiene das melhores marcas.',
-      aosDelay: '400',
+      description: 'Tudo o que seu pet precisa em um só lugar: rações, brinquedos e acessórios de qualidade.',
+      aosDelay: '300',
     },
   ];
 
   return (
-    <div className="page-container" data-aos="fade-up" data-aos-duration="1000">
-      <h2 className="services-title" data-aos="fade-down" data-aos-duration="1000">Nossos Serviços para Seu Melhor Amigo</h2>
-      <p className="services-intro" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-        Oferecemos uma gama completa de serviços para garantir a saúde, felicidade e bem-estar do seu pet.
-      </p>
+    <section className="services-section" data-aos="fade-up" data-aos-duration="1000">
+      <div className="services-header">
+        <h2 data-aos="fade-down">Serviços para Seu Melhor Amigo</h2>
+        <p data-aos="fade-up" data-aos-delay="200">
+          Cuidamos do seu pet com amor, atenção e os melhores profissionais.
+        </p>
+      </div>
 
-      <div className="services-grid">
+      <div className="services-container">
         {serviceList.map(service => (
           <div
             key={service.id}
             className="service-card"
-            data-aos="fade-up"
+            data-aos="zoom-in"
             data-aos-delay={service.aosDelay}
-            data-aos-duration="800"
           >
-            {/* Aqui usamos a tag img com o caminho da imagem do objeto service */}
-            <div className="service-icon">
-              <img src={service.imageSrc} alt={service.title} className="service-image-icon" />
+            <div className="card-image">
+              <img src={service.imageSrc} alt={service.title} />
+              <span className="service-icon">{service.icon}</span>
             </div>
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
+            <div className="card-content">
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              <button className="service-button">Saiba Mais</button>
+            </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,30 +1,154 @@
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 40px;
+:root {
+  --primary-green: #2ecc71;
+  --dark-green: #27ae60;
+  --light-bg: #f9f9f9;
+  --card-bg: #ffffff;
+  --text-dark: #222;
+  --text-light: #555;
+  --transition: 0.3s ease;
+  --border-radius: 14px;
 }
 
-.card {
-  background: white;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+/* Seção de serviços */
+.services-section {
+  background: var(--light-bg);
+  padding: 80px 20px;
   text-align: center;
-  transition: var(--transition);
 }
 
-.card img {
-  width: 100%;
+/* Cabeçalho */
+.services-header {
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.services-header h2 {
+  font-size: 2.5rem;
+  color: var(--primary-green);
+  margin-bottom: 10px;
+}
+
+.services-header p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Container dos cards */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Card de serviço */
+.service-card {
+  background: var(--card-bg);
   border-radius: var(--border-radius);
-  margin-bottom: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  text-align: center;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.card button {
-  margin-top: 10px;
+/* Imagem do card */
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.service-card:hover .card-image img {
+  transform: scale(1.08);
+}
+
+/* Ícone central do serviço */
+.service-icon {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-green);
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.service-card:hover .service-icon {
+  background: var(--dark-green);
+  transform: translateX(-50%) scale(1.1);
+}
+
+/* Conteúdo do card */
+.card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 20px 20px;
+}
+
+.card-content h3 {
+  font-size: 1.6rem;
+  color: var(--dark-green);
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+/* Botão do card */
+.service-button {
+  background: var(--primary-green);
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.service-button:hover {
+  background: var(--dark-green);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service-button:focus,
+.service-button:active {
+  outline: none;
+  border: none;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.4);
 }

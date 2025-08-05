@@ -1,4 +1,6 @@
 /* Variáveis CSS para as cores do Pet Shop */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap');
 html {
   scroll-behavior: smooth; /* Adiciona rolagem suave para âncoras */
 }
@@ -164,11 +166,26 @@ textarea:focus {
 .hero-content h1 {
   position: relative;
   bottom: 100px;
+  font-family: 'Poppins', sans-serif; /* Moderna e sofisticada */
   font-weight: 900;
-  font-size: 3.5rem;
+  font-size: 4rem;
   line-height: 1.2;
-  color: #FFD700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #2ecc71; /* Verde moderno e agradável */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 6px rgba(46, 204, 113, 0.2); /* Sombra sutil */
+  animation: green-pulse 4s infinite ease-in-out;
+}
+
+@keyframes green-pulse {
+  0%, 100% {
+    text-shadow: 0 0 6px rgba(46, 204, 113, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(46, 204, 113, 0.4);
+    transform: scale(1.02);
+  }
 }
 
 
@@ -295,21 +312,12 @@ textarea:focus {
   font-size: 50px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: var(--primary-green);
-  animation: led-blink 5s infinite ease-in-out;
-  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00cc00;
+  color: #2ecc71; /* Verde moderno e elegante */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra suave para destaque */
 }
 
-@keyframes led-blink {
-  0%, 100% {
-    color: #00ff00; /* Verde bem brilhante */
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00cc00;
-  }
-  50% {
-    color: #006600; /* Verde mais escuro */
-    text-shadow: 0 0 2px #004400, 0 0 5px #004400, 0 0 10px #003300;
-  }
-}
+
+
 .info-section p {
   font-size: 1.1rem;
   max-width: 700px;
