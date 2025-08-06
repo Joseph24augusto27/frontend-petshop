@@ -1,6 +1,7 @@
 :root {
   --primary-green: #2ecc71;
   --dark-green: #27ae60;
+  --gold: #f1c40f;
   --light-bg: #f9f9f9;
   --card-bg: #ffffff;
   --text-dark: #222;
@@ -24,8 +25,26 @@
 
 .services-header h2 {
   font-size: 2.5rem;
-  color: var(--primary-green);
+  font-weight: 700;
+  background: linear-gradient(90deg, #27ae60, #2ecc71, #27ae60);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 10px;
+  animation: green-gradient-shift 4s linear infinite;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Leve sombra para destaque */
+}
+
+@keyframes green-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .services-header p {
@@ -51,18 +70,20 @@
   border-radius: var(--border-radius);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), border var(--transition);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   height: 100%;
   text-align: center;
+  border: 2px solid transparent;
 }
 
 .service-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--gold);
 }
 
 /* Imagem do card */
@@ -82,6 +103,7 @@
 
 .service-card:hover .card-image img {
   transform: scale(1.08);
+  filter: brightness(1.05);
 }
 
 /* Ícone central do serviço */
@@ -96,12 +118,14 @@
   padding: 12px;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: background var(--transition), transform var(--transition);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
 .service-card:hover .service-icon {
-  background: var(--dark-green);
-  transform: translateX(-50%) scale(1.1);
+  background: var(--gold);
+  color: #fff;
+  transform: translateX(-50%) scale(1.15);
+  box-shadow: 0 4px 15px rgba(241, 196, 15, 0.6);
 }
 
 /* Conteúdo do card */
@@ -137,18 +161,19 @@
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
-  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition), color var(--transition);
 }
 
 .service-button:hover {
-  background: var(--dark-green);
+  background: var(--gold);
+  color: #fff;
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .service-button:focus,
 .service-button:active {
   outline: none;
   border: none;
-  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.4);
+  box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.4);
 }
