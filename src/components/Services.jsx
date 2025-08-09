@@ -7,7 +7,7 @@ function Services() {
     {
       id: 1,
       icon: <FaBath />,
-      imageSrc: 'public/images/B&C-golden.webp',
+      imageSrc: '/images/B&C-golden.webp',
       title: 'Banho e Tosa',
       description: 'Transforme o visual do seu pet com nosso serviço de banho e tosa, utilizando produtos premium e cuidado especial.',
       aosDelay: '100',
@@ -15,7 +15,7 @@ function Services() {
     {
       id: 2,
       icon: <FaStethoscope />,
-      imageSrc: 'public/images/akita.jpg',
+      imageSrc: '/images/akita.jpg',
       title: 'Consultas Veterinárias',
       description: 'Profissionais qualificados prontos para cuidar da saúde do seu pet com carinho, exames e vacinas.',
       aosDelay: '200',
