@@ -1,32 +1,22 @@
-/* Navbar.css - Cores: Verde, Dourado, Preto, Branco */
-
-/* Cores personalizadas (opcional, mas bom para referência):
- --color-green: #10B981;  (Um verde vibrante)
- --color-gold: #FFD700;   (Dourado)
- --color-black: #222222;  (Preto mais suave, para não ser 100% preto)
- --color-white: #FFFFFF;  (Branco puro)
- --color-light-gray: #f8f8f8; (Um cinza quase branco, para detalhes)
-*/
+/* Navbar.css atualizado para animação mais suave e chamativa */
 
 .navbar {
-  background-color: white; /* Preto */
-  color: #FFFFFF; /* Branco */
+  background-color: #fff; /* fundo branco */
+  color: #222; /* texto escuro */
   padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra mais escura */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* sombra suave */
   position: sticky;
   width: 100%;
   height: 117px;
   top: 0;
   left: 0;
   z-index: 1000;
-  
 }
 
 .navbar-logo {
-  height: 100px; /* Ajuste a altura do seu logo conforme necessário */
-  width: auto; /* Mantém a proporção da imagem */
-  margin-right: 50px; /* Espaço entre o logo e o texto, se houver */
-  /* filter: brightness(0) invert(1); /* Opcional: Se seu logo for colorido e você quiser que ele seja branco para o tema escuro */
+  height: 100px;
+  width: auto;
+  margin-right: 50px;
 }
 
 .navbar-container {
@@ -38,88 +28,80 @@
   align-items: center;
 }
 
-.navbar-brand {
-  color: #10B981; /* Verde */
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.navbar-brand:hover {
-  color: #FFD700; /* Dourado no hover */
-}
-
 .nav-links {
   display: flex;
   gap: 25px;
 }
 
 .nav-item {
-  position: relative;
-  color: #2ec155;
-  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #10B981; /* verde moderno */
   font-size: 1.5rem;
   font-weight: 600;
-  padding: 10px 16px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  text-shadow: 0 0 4px rgba(46, 204, 113, 0.6);
-  border: none;
-  outline: none;
-}
-
-/* Linha animada de destaque */
-.nav-item::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 40%;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #39FF14, #4dd006);
-  transition: width 0.5s ease, left 0.5s ease;
-  transform: translateX(-50%);
-  border-radius: 2px;
-}
-
-.nav-item:hover {
-  color: #2cf105;
-  text-shadow: 0 0 8px rgba(53, 240, 6, 0.8);
-  transform: translateY(-2px);
-}
-
-.nav-item:hover::after {
-  width: 70%;
-}
-
-/* Estado ativo */
-.nav-item.active {
-  color: #000;
-  font-weight: bold;
-  background: #39FF14;
-  box-shadow: 0 0 12px rgba(57, 255, 20, 0.6);
-  border-radius: 8px;
-  text-shadow: none;
   padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 
+    color 0.3s ease, 
+    background-color 0.3s ease, 
+    transform 0.3s ease, 
+    box-shadow 0.3s ease;
 }
 
-/* Estilos para o botão de menu mobile */
+/* Ícone do menu, sem brilho LED */
+.nav-icon {
+  font-size: 1.6rem;
+  color: #10B981;
+  transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
+}
+
+/* Animação suave ao passar o mouse */
+.nav-item:hover {
+  color: #FFD700; /* dourado */
+  background-color: #10B98122; /* verde transparente */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(255, 215, 0, 0.4);
+}
+
+.nav-item:hover .nav-icon {
+  color: #FFD700;
+  transform: scale(1.2) rotate(10deg);
+  filter: drop-shadow(0 0 6px #FFD700);
+}
+
+/* Link ativo */
+.active-link {
+  color: #FFD700;
+  background-color: #10B98133;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+  border-radius: 8px;
+}
+
+.active-link .nav-icon {
+  color: #FFD700;
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px #FFD700);
+}
+
+/* Botão menu mobile */
 .menu-icon {
   display: none;
   background: none;
   border: none;
-  color: #10B981; /* Verde para o ícone no mobile */
+  color: #10B981;
   cursor: pointer;
 }
 
 .menu-icon svg {
   width: 30px;
   height: 30px;
-  stroke: #10B981; /* Garante que o SVG também seja verde */
+  stroke: #10B981;
 }
 
-/* Media Queries para responsividade */
+/* Responsividade */
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
@@ -132,7 +114,7 @@
     position: absolute;
     top: 80px;
     left: 0;
-    background-color: #222222; /* Preto para o fundo do menu mobile */
+    background-color: #222222;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 1rem 20px;
     z-index: 999;
@@ -146,56 +128,10 @@
     width: 100%;
     text-align: center;
     padding: 15px 0;
-    border-bottom: 1px solid #333333; /* Linha divisória mais escura */
+    border-bottom: 1px solid #333333;
   }
 
   .nav-item:last-child {
     border-bottom: none;
-  }
-}
-
-.nav-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  font-size: 1.4rem; /* Aumentado para dar mais presença */
-  color: #39FF14;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.nav-item .nav-icon {
-  color: #39FF14; /* Verde puro, sem borda */
-  font-size: 1.5rem; /* Ícones um pouco maiores para equilibrar com o texto */
-  transition: all 0.4s ease;
-  animation: led-pulse 2s infinite ease-in-out;
-  filter: drop-shadow(0 0 2px #39FF14); /* brilho mais sutil */
-}
-
-.nav-item:hover,
-.nav-item:hover .nav-icon {
-  color: #fff700;
-  filter: drop-shadow(0 0 4px #fff700); /* brilho suave no hover */
-}
-
-.active-link {
-  color: #fff700;
-}
-
-.active-link .nav-icon {
-  color: #fff700;
-  filter: drop-shadow(0 0 4px #fff700);
-}
-
-/* LED pulsante moderno */
-@keyframes led-pulse {
-  0%, 100% {
-    opacity: 0.9;
-    filter: drop-shadow(0 0 2px #39FF14); /* brilho reduzido */
-  }
-  50% {
-    opacity: 1;
-    filter: drop-shadow(0 0 5px #39FF14); /* leve aumento no pulso */
   }
 }

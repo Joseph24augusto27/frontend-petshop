@@ -1,7 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import './Products.css';
 
 function Products() {
+  const navigate = useNavigate();
+
   const productList = [
     {
       id: 1,
@@ -47,11 +52,13 @@ function Products() {
     },
   ];
 
+  const handleSaberMaisClick = () => navigate('/contact');
+
   return (
-    <section className="products-section" data-aos="fade-up" data-aos-duration="1000">
+    <section className="products-section" data-aos="fade-up" data-aos-duration="800">
       <div className="products-header">
         <h2 data-aos="fade-down">Variedade de produtos para cães e gatos</h2>
-        <p data-aos="fade-up" data-aos-delay="200">
+        <p data-aos="fade-up" data-aos-delay="150">
           Uma seleção cuidadosa para a saúde, bem-estar e alegria do seu melhor amigo.
         </p>
       </div>
@@ -61,16 +68,23 @@ function Products() {
           <div
             key={product.id}
             className="product-card"
-            data-aos="zoom-in"
+            data-aos="fade-up"
             data-aos-delay={product.aosDelay}
           >
             <div className="product-image-wrapper">
-              <img src={product.imageSrc} alt={product.name} />
+              <LazyLoadImage
+                src={product.imageSrc}
+                alt={product.name}
+                effect="blur"
+                loading="lazy"
+              />
             </div>
             <div className="product-content">
               <h3>{product.name}</h3>
               <p>{product.description}</p>
-              <button className="product-btn">Saber Mais</button>
+              <button className="product-btn" onClick={handleSaberMaisClick}>
+                Saber Mais
+              </button>
             </div>
           </div>
         ))}

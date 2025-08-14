@@ -1,6 +1,7 @@
 /* Variáveis CSS para as cores do Pet Shop */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap');
+
 html {
   scroll-behavior: smooth; /* Adiciona rolagem suave para âncoras */
 }
