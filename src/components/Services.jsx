@@ -10,6 +10,7 @@ function Services() {
       imageSrc: '/images/B&C-golden.webp',
       title: 'Banho e Tosa',
       description: 'Transforme o visual do seu pet com nosso serviço de banho e tosa, utilizando produtos premium e cuidado especial.',
+      aos: 'fade-up',
       aosDelay: '100',
     },
     {
@@ -18,6 +19,7 @@ function Services() {
       imageSrc: '/images/akita.jpg',
       title: 'Consultas Veterinárias',
       description: 'Profissionais qualificados prontos para cuidar da saúde do seu pet com carinho, exames e vacinas.',
+      aos: 'flip-left',
       aosDelay: '200',
     },
     {
@@ -26,6 +28,7 @@ function Services() {
       imageSrc: '/images/B&C-interior.webp',
       title: 'Pet Shop Completo',
       description: 'Tudo o que seu pet precisa em um só lugar: rações, brinquedos e acessórios de qualidade.',
+      aos: 'zoom-in',
       aosDelay: '300',
     },
   ];
@@ -44,7 +47,7 @@ function Services() {
           <div
             key={service.id}
             className="service-card"
-            data-aos="zoom-in"
+            data-aos={service.aos}
             data-aos-delay={service.aosDelay}
           >
             <div className="card-image">

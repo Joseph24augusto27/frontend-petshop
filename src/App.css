@@ -1,79 +1,66 @@
-/* Variáveis CSS para as cores do Pet Shop */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap');
+/* Importando a fonte desejada */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 
 html {
-  scroll-behavior: smooth; /* Adiciona rolagem suave para âncoras */
+  scroll-behavior: smooth;
 }
-
 
 :root {
-  --primary-green: #4CAF50; /* Um verde bonito */
-  --secondary-gold: #FFD700; /* Dourado */
-  --dark-color: #222222; /* Preto mais suave para texto/fundos */
-  --light-color: #FFFFFF; /* Branco puro */
-  --light-gray: #f4f4f4; /* Cinza claro para fundos */
-  --text-color: #333333; /* Cor padrão do texto */
+  --primary-green: #4CAF50;
+  --secondary-gold: #FFD700;
+  --dark-color: #222222;
+  --light-color: #FFFFFF;
+  --light-gray: #f4f4f4;
+  --text-color: #333333;
 }
 
-/* Reset básico para todos os elementos */
+/* Reset básico */
 * {
-  box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura */
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   width: 100%;
-  /* Transições suaves para propriedades comuns, para um toque moderno */
   transition: background-color 1.0s ease, color 1.6s ease, border-color 1.6s ease, transform 1.6s ease;
+  
 }
 
+/* Fonte global */
 body {
-  font-family: 'Arial', sans-serif; /* Fonte mais comum */
   line-height: 1.6;
-  background-color: var(--light-color); /* Fundo geral do site */
-  color: var(--text-color); /* Cor padrão do texto */
-  overflow-x: hidden; /* Evita scroll horizontal indesejado */
+  background-color: var(--light-color);
+  color: var(--text-color);
+  overflow-x: hidden;
 }
 
-/* Estilo para o container principal da aplicação */
 .App {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Garante que o App ocupe toda a altura da tela */
-   width: 100%; /* Garante que o App ocupe 100% da largura */
-  overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-/* Estilo para o conteúdo principal */
 main {
-  flex-grow: 1; /* Garante que o conteúdo principal ocupe o espaço restante */ 
-    width: 100%; /* Garante que o main ocupe 100% da largura do App */
-  /* Pode adicionar um display flex e align-items/justify-content center aqui
-     se quiser que o conteúdo dentro do main (como sua página Home)
-     seja sempre centralizado horizontalmente */
+  flex-grow: 1;
+  width: 100%;
   display: flex;
-  justify-content: center; /* Centraliza o conteúdo horizontalmente */
-  align-items: flex-start; /* Alinha o conteúdo ao topo verticalmente */
+  justify-content: center;
+  align-items: flex-start;
 }
 
-
-
-p{
+p {
   font-weight: 700;
+    font-family: "Dancing Script", cursive;
 }
 
-
-/* Estilo para o rodapé */
 footer {
-  background-color: var(--secondary-gold); /* Fundo preto/escuro */
-  color: var(--light-color); /* Texto branco */
+  background-color: var(--secondary-gold);
+  color: var(--light-color);
   text-align: center;
   padding: 15px;
-  margin-top: auto; /* Empurra o rodapé para baixo */
+  margin-top: auto;
 }
 
-
-
-/* Estilo genérico para botões (usaremos essa classe em todos os botões) */
 button {
   background-color: var(--primary-green);
   color: var(--light-color);
@@ -90,17 +77,16 @@ button {
 }
 
 button:hover {
-  background-color: var(--secondary-gold); /* Dourado no hover */
-  transform: translateY(-2px); /* Pequena elevação */
+  background-color: var(--secondary-gold);
+  transform: translateY(-2px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 button:active {
-  transform: translateY(0); /* Retorna ao normal ao clicar */
+  transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para inputs de formulário */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -115,67 +101,57 @@ textarea {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
+input:focus,
 textarea:focus {
-  border-color: var(--primary-green); /* Borda verde no foco */
+  border-color: var(--primary-green);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3); /* Sombra verde suave no foco */
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
 }
-
-/* App.css - Novos estilos para a Home Page */
 
 .home-container {
   width: 100%;
-  /* Por enquanto, vamos deixar o problema do padding-top de lado como você pediu.
-     Se o conteúdo ainda estiver subindo, lembre-se que precisaremos ajustar o padding-top da main. */
 }
 
 .hero-section {
   color: white;
   text-align: center;
-  padding: 150px 20px; /* Mais padding para um visual de "banner" */
+  padding: 150px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 500px; /* Altura mínima para o hero */
-  position: relative; /* Para posicionar elementos internos se necessário */
-  position: relative; /* Para que a imagem de fundo fique atrás do conteúdo */
-  overflow: hidden; /* Para evitar que a imagem ultrapasse os limites */
-  
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
 }
-.hero-image{
-  position: absolute; /* Para posicionar a imagem */
+
+.hero-image {
+  position: absolute;
   top: 0px;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Faz a imagem cobrir toda a seção */
-  z-index: 0; /* Para que fique atrás do conteúdo */
+  object-fit: cover;
+  z-index: 0;
 }
 
 .hero-content {
   max-width: 800px;
-  z-index: 1; /* Garante que o conteúdo fique acima da camada de opacidade */
-    position: relative; /* Para que o conteúdo fique acima da imagem */
-  z-index: 1; /* Garante que o conteúdo fique visível */
+  z-index: 1;
+  position: relative;
 }
-
-
 
 .hero-content h1 {
   position: relative;
   bottom: 100px;
-  font-family: 'Poppins', sans-serif; /* Moderna e sofisticada */
   font-weight: 900;
   font-size: 4rem;
   line-height: 1.2;
-  color: #2ecc71; /* Verde moderno e agradável */
+  color: #2ecc71;
   letter-spacing: 1px;
   text-transform: uppercase;
-  text-shadow: 0 0 6px rgba(46, 204, 113, 0.2); /* Sombra sutil */
+  text-shadow: 0 0 6px rgba(46, 204, 113, 0.2);
   animation: green-pulse 4s infinite ease-in-out;
+  
 }
 
 @keyframes green-pulse {
@@ -188,7 +164,6 @@ textarea:focus {
     transform: scale(1.02);
   }
 }
-
 
 .hero-buttons {
   display: flex;
@@ -212,9 +187,9 @@ textarea:focus {
   text-shadow: 0 0 4px rgba(57, 255, 20, 0.7);
   transition: all 0.35s ease;
   overflow: hidden;
+ 
 }
 
-/* Efeito de brilho ao passar o mouse */
 .hero-button::before {
   content: "";
   position: absolute;
@@ -243,23 +218,8 @@ textarea:focus {
 }
 
 .hero-button.secondary {
-  background: transparent;
-  color: #FFD700;
-  border: 2px solid #FFD700;
-  text-shadow: 0 0 8px rgba(255, 215, 0, 0.9), 0 0 15px rgba(255, 215, 0, 0.7);
-  box-shadow: 0 0 6px rgba(255, 215, 0, 0.6), 0 0 12px rgba(255, 215, 0, 0.4) inset;
-  font-weight: 600;
-  letter-spacing: 1px;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  animation: led-glow 1.8s infinite alternate;
-}
-
-.hero-button.secondary {
-  background: #FFD700; /* Fundo sólido iluminado */
-  color: #000; /* Texto contrastante */
+  background: #FFD700;
+  color: #000;
   border: 2px solid #FFD700;
   font-weight: 700;
   letter-spacing: 1px;
@@ -284,7 +244,6 @@ textarea:focus {
     0 0 80px rgba(255, 215, 0, 0.7);
 }
 
-/* Animação LED pulsante */
 @keyframes led-pulse {
   0%, 100% {
     box-shadow:
@@ -300,9 +259,6 @@ textarea:focus {
   }
 }
 
-
-
-/* Seção de informações (exemplo) */
 .info-section {
   padding: 60px 20px;
   text-align: center;
@@ -313,43 +269,43 @@ textarea:focus {
   font-size: 50px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #2ecc71; /* Verde moderno e elegante */
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra suave para destaque */
+  color: #2ecc71;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-family: "Dancing Script", cursive;
+
 }
-
-
 
 .info-section p {
-  font-size: 1.1rem;
+  font-size: 1.8rem;
   max-width: 700px;
+  font-weight: 800;
   margin: 0 auto;
   line-height: 1.6;
+    font-family: "Dancing Script", cursive;
+
 }
 
-
-
-/* Responsividade para a Hero Section */
 @media (max-width: 768px) {
   .hero-section {
-    padding: 100px 15px; /* Reduz padding em telas menores */
+    padding: 100px 15px;
     min-height: 400px;
   }
 
   .hero-content h1 {
-    font-size: 2.5rem; /* Fonte menor */
+    font-size: 2.5rem;
   }
 
   .hero-content p {
-    font-size: 1rem; /* Fonte menor */
+    font-size: 1rem;
   }
 
   .hero-buttons {
-    flex-direction: column; /* Botões empilhados */
+    flex-direction: column;
     gap: 15px;
   }
 
   .hero-button {
-    width: 80%; /* Botões mais largos */
+    width: 80%;
     margin: 0 auto;
   }
 
@@ -361,4 +317,3 @@ textarea:focus {
     font-size: 2rem;
   }
 }
-
